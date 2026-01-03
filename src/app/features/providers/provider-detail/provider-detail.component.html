@@ -1,0 +1,59 @@
+<button mat-button matButton="filled" [routerLink]="['/providers']">← Back to List</button>
+
+<div class="provider-detail-container">
+
+  <section class="edit-form" [formGroup]="form">
+    <div class="section-header">
+      <h3>Provider Details</h3>
+      @if (isLoading()) {
+        <span class="saving-indicator">Saving...</span>
+      }
+      <div class="header-actions">
+        @if (providerId()) {
+          <button mat-button matButton="filled" (click)="startNewProvider()">+ New</button>
+          <button mat-button color="warn" (click)="deleteProvider()">Delete</button>
+        }
+        @if (!providerId()) {
+          <button mat-button matButton="filled" (click)="save()">Create Provider</button>
+        }
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Name</label>
+      <input
+        class="inline-input"
+        formControlName="name"
+        placeholder="Enter name">
+    </div>
+    <div class="field-group">
+      <label>Specialty</label>
+      <input
+        class="inline-input"
+        formControlName="specialty"
+        placeholder="Enter specialty">
+    </div>
+    <div class="field-group">
+      <label>Clinic Location</label>
+      <input
+        class="inline-input"
+        formControlName="clinicLocation"
+        placeholder="Enter location">
+    </div>
+    <div class="field-group">
+      <label>Email</label>
+      <input
+        class="inline-input"
+        formControlName="email"
+        placeholder="Enter email">
+    </div>
+    <div class="field-group">
+      <label>Phone Number</label>
+      <input class="inline-input" formControlName="phone"
+        placeholder="Enter phone">
+    </div>
+      <div class="field-group">
+        <label>Website</label>
+        <input class="inline-input" formControlName="website"
+          placeholder="Enter website">
+      </div>
+  </section>

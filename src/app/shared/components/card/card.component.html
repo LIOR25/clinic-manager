@@ -1,0 +1,17 @@
+<mat-card class="card" appearance="outlined">
+  <mat-card-header class="title-header">
+    <mat-card-title-group>
+      <mat-card-title>{{provider.name}}</mat-card-title>
+      <mat-card-subtitle>{{provider.clinicLocation}}</mat-card-subtitle>
+      <mat-icon fontIcon="account_circle"></mat-icon>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content class="provider-info">
+  <mat-card-footer class="example-card-footer">
+    <mat-chip-set>
+      <mat-chip>{{provider.phone}}</mat-chip>
+    </mat-chip-set>
+  </mat-card-footer>
+  <span class="view-more" [routerLink]="['/providers', provider.id]">View Full Profile →</span>
+  </mat-card-content>
+</mat-card>
