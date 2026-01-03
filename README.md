@@ -6,6 +6,8 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## 🚀 Features
 
+**[View Live Demo](https://lior25.github.io/clinic-manager/)**
+
 *   **Provider List**: View a grid of healthcare providers.
 *   **Real-time Search**: Filter providers by name, location, or phone number using computed signals.
 *   **Inline Editing**: Edit provider details directly with a seamless UI.
