@@ -49,7 +49,7 @@ export class ProviderDetailComponent {
       });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.providerId.set(Number(id));
@@ -62,7 +62,7 @@ export class ProviderDetailComponent {
     }
   }
 
-  save() {
+  save(): void {
     const id = this.providerId();
     if (!id) {
       const data = this.form.value;
@@ -77,13 +77,13 @@ export class ProviderDetailComponent {
     }
   }
 
-  startNewProvider() {
+  startNewProvider(): void {
     this.providerId.set(null);
     this.providerService.provider.set({} as any);
     this.form.reset();
   }
 
-  deleteProvider() {
+  deleteProvider(): void {
     const id = this.providerId();
     if (id && confirm('Are you sure you want to delete this provider?')) {
       this.providerService.deleteProvider(id).subscribe({

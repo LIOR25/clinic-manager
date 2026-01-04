@@ -25,11 +25,11 @@ export class ProviderListComponent {
   );
 
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.providerService.getProviders().subscribe();
   }
 
-  onSearch(event: Event) {
+  onSearch(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.providerService.searchQuery.set(target.value);
   }
