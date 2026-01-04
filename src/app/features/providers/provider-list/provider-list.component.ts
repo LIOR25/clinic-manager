@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { ProviderService } from '../../../core/services/provider.service';
 import { CardComponent } from '../../../shared/components/card/card.component';
 
@@ -7,7 +7,8 @@ import { CardComponent } from '../../../shared/components/card/card.component';
   selector: 'app-provider-list',
   imports: [CardComponent],
   templateUrl: './provider-list.component.html',
-  styleUrl: './provider-list.component.scss'
+  styleUrl: './provider-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProviderListComponent {
   private providerService = inject(ProviderService);

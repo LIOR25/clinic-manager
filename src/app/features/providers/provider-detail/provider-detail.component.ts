@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
@@ -10,7 +10,8 @@ import { ProviderService } from '../../../core/services/provider.service';
   selector: 'app-provider-detail',
   imports: [RouterLink, ReactiveFormsModule, MatButtonModule],
   templateUrl: './provider-detail.component.html',
-  styleUrl: './provider-detail.component.scss'
+  styleUrl: './provider-detail.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProviderDetailComponent {
 
